@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niveditha C — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: white;
+      background: linear-gradient(135deg, #242224, #2a2a2b, #383838, #bababb, #9b9a9b);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffb3c6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #ff85a2;
+    }
+
+    section {
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #ff85a2;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255, 192, 203, 0.3);
+      margin-bottom: 25px;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, #ff85a2, #5cc6ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 700;
+      margin-bottom: 15px;
+      animation: slideDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #e2e2e2;
+      max-width: 650px;
+      line-height: 1.6;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .socials {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .socials a {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #ff85a2;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: #ffb3c6;
+      margin-bottom: 25px;
+    }
+
+    .about, .education, .contact {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 60px;
+      margin: 60px auto;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    }
+
+    .about p, .education p, .contact p {
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      background: linear-gradient(90deg, #ff85a2, #5cc6ff);
+      color: #222;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: transform 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      background: linear-gradient(90deg, #ffb3c6, #b388eb, #5cc6ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1>Niveditha C</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <img src="/niveditha_pic.jpeg" alt="Niveditha Chandrasekaran">
+    <h2>Hi, I’m Niveditha Chandrasekaran</h2>
+    <p>A passionate Computer Science student blending creativity with technology — building meaningful digital experiences with code, design, and innovation.</p>
+
+    <div class="socials">
+      <a href="mailto:nivehari2515@gmail.com"><i data-lucide="mail"></i></a>
+      <a href="https://www.linkedin.com/in/niveditha-chandrasekaran-8674a8333" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="tel:6381275842"><i data-lucide="phone"></i></a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h3 class="section-title">About Me</h3>
+    <p>
+      I’m Niveditha C — a tech enthusiast exploring programming and design. 💻 Skilled in Python, C, and UI/UX design, I’m passionate about machine learning and DSA. 🎓 I’ve completed multiple certifications, including Python Essentials, MongoDB Basics, and Cybersecurity. 🚀 With over 330 LeetCode problems solved, I love tackling challenges that sharpen my logic and creativity. 🌸 Beyond code, I’m on a journey of self-discovery — learning, growing, and becoming my truest self.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h3 class="section-title">Skills & Tools</h3>
+    <div class="skills-container">
+      <div class="skill">Python</div>
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">Java</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">Figma</div>
+      <div class="skill">VS Code</div>
+      <div class="skill">Eclipse</div>
+      <div class="skill">Teamwork</div>
+      <div class="skill">Leadership</div>
+      <div class="skill">Communication</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="project">
+      <h4>Health Chatbot</h4>
+      <p>A chatbot with four modes: Mental, Physical, Nutrition, and Diagnosis — designed to provide holistic well-being guidance.</p>
+      <p><strong>Tech Used:</strong> Figma, HTML, CSS, JS, API</p>
+    </div>
+  </section>
+
+  <section id="education" class="education">
+    <h3 class="section-title">Education</h3>
+    <p><strong>Easwari Engineering College</strong> — B.E. CSE (2024–2028) | CGPA: 9.07</p>
+    <p><strong>SSLC</strong> (2021–2022) — 92.6%</p>
+    <p><strong>12th</strong> (2023–2024) — 91.1%</p>
+    <p>Adarsh Matriculation Higher Secondary School — State Board (Tamil Nadu)</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h3 class="section-title">Get in Touch</h3>
+    <p>Feel free to reach out for collaborations, projects, or just to connect!</p>
+    <div class="socials">
+      <a href="mailto:nivehari2515@gmail.com"><i data-lucide="mail"></i></a>
+      <a href="https://www.linkedin.com/in/niveditha-chandrasekaran-8674a8333" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="tel:6381275842"><i data-lucide="phone"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    ✨ <span>Empowering technology with creativity — crafted with passion by Niveditha Chandrasekaran</span> ✨
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
